@@ -3,6 +3,7 @@ public class Rogue extends Character {
     public Rogue(){
 	HP = 200;
 	strength = 55;
+	magic = 15;
 	defense = 18;
 	attackR = 1.05;
     }

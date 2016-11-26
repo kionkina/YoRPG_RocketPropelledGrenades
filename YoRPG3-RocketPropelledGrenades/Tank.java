@@ -3,6 +3,7 @@ public class Tank extends Character{
     public Tank(){
 	HP = 500;
 	strength = 25;
+	magic = 40;
 	defense = 50;
 	attackR = 0.6;
     }

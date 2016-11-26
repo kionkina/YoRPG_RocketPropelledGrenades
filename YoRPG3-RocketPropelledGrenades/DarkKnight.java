@@ -3,6 +3,7 @@ public class DarkKnight extends Character{
     public DarkKnight(){
 	HP = 175;
 	strength = 75;
+	magic = 10;
 	defense = 15;
 	attackR = 1;
 

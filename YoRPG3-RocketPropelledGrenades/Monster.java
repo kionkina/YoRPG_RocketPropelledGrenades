@@ -1,4 +1,6 @@
 public class Monster extends Character{
+
+    private int mDefense;
    
     public Monster(){
        	HP = 150;
@@ -6,6 +8,7 @@ public class Monster extends Character{
 	  sum of the minimum value and M.r() * (max - min) */
 	strength= (int)(20 + (Math.random() * 45));
 	defense= 20;
+	mDefense = 20;
 	attackR = 1;
     }
 

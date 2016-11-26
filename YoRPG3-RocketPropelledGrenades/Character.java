@@ -6,7 +6,7 @@ HW 32 -- Ye Olde Role Playing Game, Expanded
 public abstract class Character {
     
     protected String name; //this is WIP needs to be fixed/redone
-    protected int HP, strength, defense;
+    protected int HP, strength, defense, magic;
     protected double attackR;
 
     protected final int oldDef = defense;
@@ -20,6 +20,7 @@ public abstract class Character {
     public Character(){
 	HP = 200;
 	strength=50;
+	magic = 50;
 	defense=20;
 	attackR=1;
     }
