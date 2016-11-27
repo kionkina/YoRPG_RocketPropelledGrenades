@@ -1,7 +1,8 @@
 public class DarkKnight extends Character{
 	
     public DarkKnight(){
-	HP = 175;
+	maxHP = 175;
+	HP = maxHP;
 	strength = 75;
 	magic = 10;
 	defense = 15;
@@ -16,17 +17,17 @@ public class DarkKnight extends Character{
 	
 	public String about(){
 		
-		return "DarkKnight possesses remarkable strength";
+		return "DarkKnight possesses remarkable strength:  maxHP = 175";
 		
 	}
 	
 	
 	public void specialize(){
 	defense =(int)( defense * 0.8);
-	attackR += .7; }
+	attackR = Math.random() + 1 ; }
 
     public void normalize(){
-	defense = oldDef;
-	attackR = oldAtt; }
+	defense = 15;
+	attackR = 1; }
 
 }

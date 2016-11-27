@@ -6,11 +6,11 @@ HW 32 -- Ye Olde Role Playing Game, Expanded
 public abstract class Character {
     
     protected String name; //this is WIP needs to be fixed/redone
-    protected int HP, strength, defense, magic;
+    protected int maxHP, HP, strength, defense, magic;
     protected double attackR;
 
-    protected final int oldDef = defense;
-    protected final double oldAtt = attackR;
+    //protected final int oldDef = defense;
+    //protected final double oldAtt = attackR; 
 
     public abstract String about();
     public abstract void specialize();
@@ -18,13 +18,14 @@ public abstract class Character {
     
 
     public Character(){
-	HP = 200;
+	maxHP = 200;
+	HP = maxHP;
 	strength=50;
 	magic = 50;
 	defense=20;
 	attackR=1;
     }
-
+	
     public boolean isAlive(){
 	return HP > 0; }
     
@@ -42,13 +43,25 @@ public abstract class Character {
 
     public int attack(Character w){
 	int damage = (int)(strength * attackR) - w.getDefense();
-	// lowerHP must be called on warrior!
+
 	if (damage < 0){
 	    damage = 0;
 	}
 	w.lowerHP(damage);
 	return damage;
     }
+	
+	public int getMaxHP(){
+	return maxHP;
+    }
 
+     public void newMax(int n){
+	 maxHP += (int) maxHP * (0.01 * n);}
+		 
+	
+    public void heal(){
+	HP = maxHP; }
+
+	
 
 } 

@@ -1,11 +1,12 @@
 public class Tank extends Character{
 
     public Tank(){
-	HP = 500;
-	strength = 25;
+	maxHP = 300;
+	HP = maxHP;
+	strength = 40;
 	magic = 40;
-	defense = 50;
-	attackR = 0.6;
+	defense = 40;
+	attackR = 0.65;
     }
  public Tank(String n){
 	this();
@@ -13,16 +14,16 @@ public class Tank extends Character{
     }
  
 public String about(){
-	return  "Tank owns an abundance of health points.";
+	return  "Tank owns an abundance of health points: maxHP = 300";
 }
 	
 	public void specialize(){
 	defense =(int)( defense * 0.8);
-	attackR += .7; }
+	attackR = Math.random() + 1 ; }
 
     public void normalize(){
-	defense = oldDef;
-	attackR = oldAtt; }
+	defense = 40;
+	attackR = .65; }
 	
 	
 }

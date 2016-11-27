@@ -18,7 +18,7 @@ public class YoRPG
 
     //change this constant to set number of encounters in a game
     public final static int MAX_ENCOUNTERS = 5;
-
+	public static int enc = 0;
     //each round, a Warrior and a Monster will be instantiated...
     private Character pat;   //Is it man or woman?
     private Monster smaug; //Friendly generic monster name?
@@ -30,6 +30,9 @@ public class YoRPG
 
     private InputStreamReader isr;
     private BufferedReader in;
+
+   
+    
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -58,7 +61,6 @@ public class YoRPG
 	String s;
 	String name = "";
 	s = "~~~ Welcome to Ye Olde RPG! ~~~\n";
-
 	s += "\nChoose your difficulty: \n";
 	s += "\t1: Easy\n";
 	s += "\t2: Not so easy\n";
@@ -89,7 +91,7 @@ public class YoRPG
 
 	//====================CHOOSING A CLASS=================
 
-	s = "Intrepid warrior, what doth thy call thyself? (State your name): ";
+	s = "Intrepid adventurer, what doth thy call thyself? (State your name): ";
 	System.out.print( s );
 
 	try {
@@ -131,13 +133,15 @@ public class YoRPG
 	int i = 1;
 	int d1, d2;
 
-	if ( Math.random() >= ( difficulty / 3.0 ) )
+	if ( Math.random() >= ( difficulty / 3.0 ) ){
 	    System.out.println( "\nNothing to see here. Move along!" );
+	   }
 	else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
-
-	    smaug = new Monster();
-
+		
+		
+	    smaug = new Monster((int) (150 + (150 * enc * 0.25)));
+	    
 	    while( smaug.isAlive() && pat.isAlive() ) {
 
 		// Give user the option of using a special attack:
@@ -176,6 +180,11 @@ public class YoRPG
 	    //option 2: you slay the beast
 	    else if ( !smaug.isAlive() ) {
 		System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
+		pat.newMax(10);
+		pat.heal();
+		System.out.println( "======YE MAXHP HATH INCREAS-ED BY 10%... IT IS NOW "+ pat.getMaxHP() + "======");
+		System.out.println("monsta maxHP is " + smaug.getMaxHP());
+		  System.out.println( "======YE HATH BEEN HEALED... but monsters ahead are stronger======");
 		return true;
 	    }
 	    //option 3: the beast slays you
@@ -205,8 +214,9 @@ public class YoRPG
 	    if ( !game.playTurn() )
 		break;
 	    encounters++;
-	    System.out.println();
-	}
+		enc ++;
+	    System.out.println("======YE HATH REACH-ED LEVEL " + (encounters + 1) + "!======");
+	    }
 
 	System.out.println( "Thy game doth be over." );
 

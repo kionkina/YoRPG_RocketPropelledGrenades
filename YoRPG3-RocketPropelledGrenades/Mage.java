@@ -1,7 +1,8 @@
 public class Mage extends Character{
 
     public Mage(){
-	HP = 150;
+	maxHP = 150;
+	HP = maxHP;
 	strength = 40;
 	magic = 100;
 	defense = 15;
@@ -13,15 +14,15 @@ public class Mage extends Character{
     }
 
 	public String about(){
-		return "Mage is third strongest.";}
+		return "Mage is third strongest: maxHP = 150";}
 	
 	public void specialize(){
 	defense =(int)( defense * 0.8);
-	attackR += .7; }
+	attackR = Math.random() + 1 ; }
 
     public void normalize(){
-	defense = oldDef;
-	attackR = oldAtt; }
+	defense = 15;
+	attackR = .8; }
 
 	
 }

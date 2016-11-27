@@ -1,7 +1,8 @@
 public class Warrior extends Character{
 
     public Warrior(){
-	HP = 200;
+	maxHP = 200;
+	HP = maxHP;
 	strength= 50;
 	defense= 20;
 	attackR = 1;
@@ -13,16 +14,16 @@ public class Warrior extends Character{
     }
 	
 	public String about(){
-		return  "A warrior is a strong fighter.";
+		return  "A warrior is a strong fighter: maxHP = 200";
 	}
 	
 	public void specialize(){
 	defense =(int)( defense * 0.8);
-	attackR += .7; }
+	attackR = Math.random() + 1 ; }
 
     public void normalize(){
-	defense = oldDef;
-	attackR = oldAtt; }
+	defense = 20;
+	attackR = 1; }
 	
 	
 }
