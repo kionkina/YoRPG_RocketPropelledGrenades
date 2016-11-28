@@ -5,7 +5,7 @@ HW 32 -- Ye Olde Role Playing Game, Expanded
 
 public abstract class Character {
     
-    protected String name; //this is WIP needs to be fixed/redone
+    protected String name; 
     protected int maxHP, HP, strength, defense, magic;
     protected double attackR;
 

@@ -17,7 +17,7 @@ public class Mage extends Character{
 		return "Mage is third strongest: maxHP = 150";}
 	
 	public void specialize(){
-	defense =(int)( defense * 0.8);
+	defense =(int)( defense * 0.6);
 	attackR = Math.random() + 1 ; }
 
     public void normalize(){

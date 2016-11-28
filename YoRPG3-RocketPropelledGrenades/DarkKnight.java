@@ -23,7 +23,7 @@ public class DarkKnight extends Character{
 	
 	
 	public void specialize(){
-	defense =(int)( defense * 0.8);
+	defense =(int)( defense * 0.6);
 	attackR = Math.random() + 1 ; }
 
     public void normalize(){
